@@ -9,12 +9,17 @@ ul {
     padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Playfair Display', serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }  
 
 .content-wrapper {
@@ -28,31 +33,36 @@ header {
     background-color: rgba(255, 255, 255, 0.9); /* slightly transparent white */
     left: 0;
     right: 0;
+    padding: 0.5rem 1rem;
 }
+
+/* .header-wrapper {
+    height: 70px;
+} */
  
 .fixed-header {
     position: fixed;
     top: 0;
 }
   
-
 nav {
     display: flex;
 }
 
 nav .home-tab {
     margin-left: -2rem;
+    margin-top: 1rem;
 }
 
 nav .home-tab a {
     font-size: 40px;
-    /* line-height: 40px; */
 }
 
 nav .home-tab li {
     background-color: transparent;
-    padding: 1;
-    margin: 1rem 2;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    list-style-type: none;
 }
 
 nav .home-tab li:hover a {
@@ -64,7 +74,7 @@ nav .other-tabs {
     display: flex;
     list-style-type: none;
     margin-left: auto;
-    /* Add this line to push the other tabs to the center  */
+
     position: relative;
     top: 28px;
 }
@@ -76,21 +86,22 @@ nav .other-tabs li:hover a {
 nav ul li {
     margin: 2rem;
     padding: 0.5rem 5rem;
-    /* background-color: #555; */
     border-radius: 1px;
+    width: 10vw;
+    height: 5vw;
 }
 
 nav ul li a {
     text-decoration: none;
     color: darkgreen;
     transition: color 0.3s, background-color 0.3s;
-    font-size: 20px;
+    font-size: 1vw;
+    line-height: 1.6;
 }
 
 
 nav ul li:hover {
-    background-color: transparent;
-    /* Change this value to a darker grey */
+    background-color: #555;
 }
 
 nav ul:not(.home-tab) li:hover {
@@ -111,13 +122,253 @@ section {
     text-align: center;
 }
 
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    color: #444;
+    font-size: 12px;
+    line-height: 1.6;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.footer-left {
+    flex: 2;
+    margin-right: 10rem;
+}
+
+.footer-right {
+    display: flex;
+    gap: 2rem;
+    flex: 3;
+    justify-content: flex-end;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding-right: 1rem;
+}
+
+.hours {
+    display: flex;
+    flex-direction: column;
+}
+
+.hours h4 {
+    margin-bottom: 0.5rem;
+}
+
+.hours table {
+    display: flex;
+    flex-direction: column;
+}
+
+.hours tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.hours td {
+    white-space: nowrap;
+}
+  
+
+.hours p {
+    white-space: nowrap;
+}
+
+.hours td:first-child {
+    padding-right: 1rem;
+    white-space: nowrap;
+    width: 60%;
+}
+
+.hours td:nth-child(2) {
+    width: 40%;
+}
+
+
+.footer-right div {
+    flex: 1.3;
+}
+
+.footer-right h4 {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    button.circular-button {
+        border: none;
+        padding: 0;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    .circular-button {
+        position: fixed;
+        z-index: 1000;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #333;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .collapsed-sidebar.open {
+        left: 0;
+    }
+
+    .facebook-icon {
+        display: flex;
+        /* margin-left: 0; */
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .facebook-icon a {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .facebook-icon a img {
+        width: 75%;
+    }
+    
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+    }
+    
+    .hamburger-icon div {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+    }     
+
+    header {
+        display: none;
+        z-index: 1;
+    }
+
+    nav .home-tab, nav .other-tabs {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
+
+    nav .other-tabs {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        list-style-type: none;
+        margin-left: auto;
+        position: relative;
+        top: 28px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    nav ul li {
+        margin: 0.5rem;
+        padding: 0.02rem 5rem; 
+        border-radius: 1px;
+    }
+
+    #top-bar {
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0;
+        height: auto;
+        padding: 0.1rem 1rem;
+    }
+
+    .top-address-phone {
+        width: auto;
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 1490px) {
+    nav ul li {
+        width: 8vw;
+        height: 4vw;
+    }
+    
+    li {
+        width: 20vw;;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: darkgreen;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: red;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .flex-container {
+        flex-direction: row;
+    }
+}
+
 #top-bar {
     height: 36px;
     background-color: #13291c;
     display: flex;
     align-items: center;
     padding-left: 1rem;
-    position: absolute; /* Changed from fixed to absolute */
+    position: fixed;
     width: 100%; 
     z-index: 1001; 
 }
@@ -126,7 +377,7 @@ section {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 12px;
     text-align: center;
-    width: 100%; /* Add this to make the content centered */
+    width: 100%;
 }
 
 /* For screens larger than 768px */
@@ -195,11 +446,55 @@ section {
     flex: 1;
 }
 
-.contact-map iframe {
-    width: 50%;
+.circular-button {
+    display: none;
+}
+
+.collapsed-sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
     height: 100%;
-    border: none;
-    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: left 0.3s;
+    z-index: 1001;
+}
+
+.collapsed-sidebar ul {
+    list-style-type: none;
+}
+
+.collapsed-sidebar ul li a {
+    display: block;
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+    color: darkgreen;
+    transition: color 0.3s;
+}
+
+.collapsed-sidebar ul li a:hover {
+    color: red;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: darkgreen;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -231,13 +526,14 @@ section {
   
 
 #home {
-    background-image: url('images/chef-stir-fry-wok-dramatic-260nw-1425674246.png');
-    /* Add background-image related properties to the #home selector */
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #13291c;
+    position: relative;
+    overflow: hidden;
 }
 
 #home h1, #home h2, #home h3, #home p {
@@ -245,20 +541,15 @@ section {
 }
 
 .home-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/chef-stir-fry-wok-dramatic-260nw-1425674246.png');
+    background-image: url('images/asianBistroInterior.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    filter: grayscale(100%);
+    width: 100%;
+    height: calc(100vh - 50px);
+    position: relative;
     z-index: -1;
 }
-
 
 #menu {
     background-color: #13291c;
@@ -266,6 +557,7 @@ section {
 
 #photos {
     background-color: #13291c;
+    /* border: 2px solid #333; */
 }
 
 #photos h2 {
@@ -293,12 +585,11 @@ section {
     .photo-card {
         width: calc(50% - 2rem);
     }
-}
-
-/* For screens larger than 1024px */
-@media (min-width: 1024px) {
-    .photo-card {
-        width: calc(33% - 2rem);
+    nav .other-tabs {
+        display: flex;
+        list-style-type: none;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -379,3 +670,84 @@ section h3 {
     background-size: cover;
 }
 
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slider-item img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    max-height: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.slider-item.active {
+    opacity: 1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    display: none;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}

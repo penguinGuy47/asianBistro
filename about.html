@@ -10,11 +10,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
     integrity="sha512-K5MlipH7tn8ONvfpd7SD34jZeU6LnD5Fec34Bw5K5S5SNNbukW81X2A5H5Cq4KgDR0fe5Mxjj5P5d5IwdNt84g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <style>
+      header {
+        background-color: white;
+      }
+      body {
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .home-bg-image {
+        background-image: url('images/asianBistroInterior.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: calc(100vh - 50px); /* adjust the height based on your top-bar height */
+        position: relative;
+        z-index: -1;
+      }
+    </style>    
 </head>
 
 <body>
@@ -28,9 +44,10 @@
   <header>
     <nav>
       <ul class="home-tab">
-        <li><a href="index.html#home">Asian Bistro</a></li>
+        <li><a href="index.html#home">"logo"</a></li>
       </ul>
       <ul class="other-tabs">
+        <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#menu">Menu</a></li>
         <li><a href="index.html#photos">Gallery</a></li>
         <li><a href="about.html">About</a></li>
@@ -39,3 +56,75 @@
       </ul>
     </nav>
   </header>
+  <div class="home-bg-image"></div>
+  <script>
+    $(document).ready(function() {
+      let images = [
+        "images/chef-stir-fry-wok-dramatic-260nw-1425674246.png",
+        "images/your-second-image.jpg",
+        "images/your-third-image.jpg"
+      ];
+
+      let currentImageIndex = 0;
+      let nextImageIndex = 1;
+
+      function changeImage() {
+        $(".home-bg-image").fadeOut(1000, function() {
+          $(this).css("background-image", `url(${images[nextImageIndex]})`);
+          $(this).fadeIn(1000);
+        });
+
+        currentImageIndex = nextImageIndex;
+        nextImageIndex = (nextImageIndex + 1) % images.length;
+      }
+
+      setInterval(changeImage, 5000); // Change image every 5000 milliseconds (5 seconds)
+    });
+  </script>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initializeMap">
+  </script>
+  <iframe
+    id="map"
+    frameborder="0"
+    style="border:0; width: 100%; height: 400px;"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAz6UfD6FJLcM7mr6QhcuJY8WfNIEE3rI&q=Space+Needle,Seattle+WA"
+    allowfullscreen>
+  </iframe>
+  <footer>
+    <div class="footer-left">
+        <h4>"logo"</h4>
+    </div>
+    <div class="footer-right">
+        <div class="hours">
+            <h4>Hours</h4>
+            <table>
+                <tr>
+                    <td>Monday - Wednesday</td>
+                    <td>11:30AM - 9:00PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Friday - Saturday</td>
+                    <td>11:00AM - 9:30PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>11:30AM - 9:00PM</td>
+                </tr>
+            </table>
+        </div>            
+        <div class="location">
+            <h4>Location</h4>
+            <p>123 Main St, City, State 12345</p>
+        </div>
+        <div class="contact">
+            <h4>Contact</h4>
+            <p>(555) 555-5555</p>
+        </div>
+    </div>
+  </footer>
+</body>
