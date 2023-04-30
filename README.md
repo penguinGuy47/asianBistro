@@ -24,9 +24,3 @@ FontAwesome 6.1.0
 
 Customization:
 To customize the website, modify the HTML, CSS, and JavaScript files as needed. For example, you can update the contact information, address, and images to match your own restaurant.
-
-Contributing:
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-License:
-This project is licensed under the MIT License. See LICENSE for more information.
