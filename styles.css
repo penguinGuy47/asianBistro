@@ -13,6 +13,20 @@ ul {
     box-sizing: border-box;
 }
 
+
+
+main {
+    font-family: 'Playfair Display', serif;
+}
+
+.landing {
+    min-height: 100vh;
+    background: url("./images/chef-stir-fry-wok-dramatic-260nw-1425674246.png");
+    background-size: cover;
+}
+
+
+
 body {
     margin: 0;
     padding: 0;
@@ -26,19 +40,14 @@ body {
     background-color: white;
 }
 
+
 header {
-    position: absolute;
-    top: 0;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.9); /* slightly transparent white */
     left: 0;
     right: 0;
-    padding: 0.5rem 1rem;
 }
 
-/* .header-wrapper {
-    height: 70px;
-} */
  
 .fixed-header {
     position: fixed;
@@ -47,15 +56,17 @@ header {
   
 nav {
     display: flex;
+    padding-top: 36px;
 }
 
 nav .home-tab {
-    margin-left: -2rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 nav .home-tab a {
-    font-size: 40px;
+    font-size: 3vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav .home-tab li {
@@ -71,13 +82,29 @@ nav .home-tab li:hover a {
 }
 
 nav .other-tabs {
-    display: flex;
     list-style-type: none;
     margin-left: auto;
-
-    position: relative;
-    top: 28px;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
+
+nav .other-tabs li {
+    background-color: transparent;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav .other-tabs li a {
+    text-decoration: none;
+    color: darkgreen;
+    transition: color 0.3s, background-color 0.3s;
+    font-size: 1.5vw;
+    line-height: 1.6;
+    font-weight: bold;
+} 
 
 nav .other-tabs li:hover a {
     color: red;
@@ -85,6 +112,7 @@ nav .other-tabs li:hover a {
 
 nav ul li {
     margin: 2rem;
+    margin-bottom: 4rem;
     padding: 0.5rem 5rem;
     border-radius: 1px;
     width: 10vw;
@@ -151,6 +179,21 @@ footer {
     justify-content: flex-end;
 }
 
+#floating-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100; /* To ensure it stays on top of other content */
+    background-color: #fff; /* Change to match your site */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* optional: add a little shadow */
+}
+#floating-icon i {
+    color: #000; /* Change to match your site */
+}
+
+
 h4 {
     font-size: 14px;
     font-weight: 600;
@@ -212,6 +255,47 @@ td {
 .footer-right h4 {
     margin-bottom: 0.5rem;
 }
+.menu-btn {
+    display: none;
+  }
+  
+  .menu-items {
+    display: block;
+  }
+  
+  .menu-icon,
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    display: block;
+    background-color: #333;
+    height: 2px;
+    width: 20px;
+  }
+  
+  .menu-icon::before,
+  .menu-icon::after {
+    margin-top: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-btn {
+      display: block;
+    }
+  
+    .menu-items {
+      display: none;
+    }
+  
+    .menu-btn.active .menu-icon::before {
+      transform: translateY(7px) rotate(45deg);
+    }
+  
+    .menu-btn.active .menu-icon::after {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+  
 
 @media (max-width: 768px) {
     button.circular-button {
@@ -368,10 +452,13 @@ td {
     display: flex;
     align-items: center;
     padding-left: 1rem;
-    position: fixed;
-    width: 100%; 
-    z-index: 1001; 
+    position: fixed; /* Add this line */
+    top: 0; /* Add this line */
+    left: 0;
+    right: 0;
+    z-index: 1001;
 }
+
 
 .top-address-phone {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -400,6 +487,11 @@ td {
 .facebook-icon {
     margin-left: auto;
   }
+
+.facebook-iconn {
+    margin-right: auto;
+    position:sticky;
+}
   
 .facebook-icon a {
     display: block;
@@ -590,6 +682,7 @@ td {
         list-style-type: none;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0.1rem;
     }
 }
 

@@ -2,6 +2,15 @@ function initializeMap() {
   initMap();
 }
 
+const menuButton = document.querySelector('.menu-btn');
+const menuItems = document.querySelector('.menu-items');
+
+menuButton.addEventListener('click', () => {
+  menuButton.classList.toggle('active');
+  menuItems.style.display = menuItems.style.display === 'none' ? 'block' : 'none';
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll("nav ul li a");
 
